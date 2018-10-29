@@ -84,6 +84,7 @@ public class ControllerDay {
         try {
             modelDay.set();
         } catch (DataKitException e) {
+            Log.e("abc","controller day: datakit error");
             LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(DataKitException.class.getSimpleName()));
         }
         subscription = Observable.merge(Observable.just(-1), getObservableWakeupOffset(), getObservableWakeup(), getObservableSleepOffset(), getObservableSleep()).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())

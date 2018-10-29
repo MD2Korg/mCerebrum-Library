@@ -42,18 +42,21 @@ import mehdi.sakout.fancybuttons.FancyButton;
  */
 
 public class ViewButtons extends LinearLayout {
-    public ViewButtons(Context context, AttributeSet attrs) {
+    public ViewButtons(Context context, int column, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.view_buttons, this, true);
+        if(column==2)
+            inflater.inflate(R.layout.view_buttons_2, this, true);
+        else
+            inflater.inflate(R.layout.view_buttons, this, true);
         for (int i = 1; i <= 6; i++) {
             FancyButton b = getButton(i);
             b.setVisibility(INVISIBLE);
         }
     }
 
-    public ViewButtons(Context context) {
-        this(context, null);
+    public ViewButtons(Context context, int column) {
+        this(context, column, null);
     }
 
 
@@ -125,8 +128,20 @@ public class ViewButtons extends LinearLayout {
             i.setImageDrawable(image);
         else {
             i.setVisibility(GONE);
-            t.setGravity(Gravity.CENTER);
+            LinearLayout.LayoutParams param1 = new LinearLayout.LayoutParams(
+                    LayoutParams.WRAP_CONTENT,
+                    LayoutParams.WRAP_CONTENT,
+                    0.0f
+            );
+            i.setLayoutParams(param1);
 
+            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
+                    LayoutParams.MATCH_PARENT,
+                    LayoutParams.MATCH_PARENT,
+                    1.0f
+            );
+            t.setGravity(Gravity.CENTER);
+            t.setLayoutParams(param);
         }
         FancyButton b = getButton(index);
         t.setText(title);

@@ -1,6 +1,9 @@
 package org.md2k.mcerebrum.commons.ui.privacy;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -75,11 +78,9 @@ class PrivacyControlManager {
                 }
             }
         } catch (DataKitException e) {
+            Log.e("abc","privacy controller datakit exception e="+e.getMessage());
             privacyData=null;
-/*
-            Context context = MyApplication.getContext();
-            LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(AbstractActivityBasics.INTENT_RESTART));
-*/
+            LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(DataKitException.class.getSimpleName()));
         }
         return privacyData;
     }

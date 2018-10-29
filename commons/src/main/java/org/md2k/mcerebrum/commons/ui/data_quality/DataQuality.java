@@ -143,6 +143,7 @@ class DataQuality {
             handlerSubscribe.removeCallbacks(runnableSubscribe);
             handlerNoData.removeCallbacks(runnableNoData);
 //            handlerSubscribe.removeCallbacks(runnableCheckAvailability);
+            Log.d("abc","4");
             if (dataSourceClient != null && DataKitAPI.getInstance(context).isConnected()) {
                 DataKitAPI.getInstance(context).unsubscribe(dataSourceClient);
                 dataSourceClient=null;
