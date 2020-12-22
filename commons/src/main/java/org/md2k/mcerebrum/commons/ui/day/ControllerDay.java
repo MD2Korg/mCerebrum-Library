@@ -29,8 +29,9 @@ package org.md2k.mcerebrum.commons.ui.day;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import org.md2k.datakitapi.exception.DataKitException;
 import org.md2k.datakitapi.time.DateTime;
@@ -217,9 +218,11 @@ public class ControllerDay {
     }
 
     public void stop() {
-        Log.d("abc","DAY: ControllerDay -> stop()");
-        if(subscription!=null && !subscription.isUnsubscribed())
-            subscription.unsubscribe();
+        try {
+            Log.d("abc", "DAY: ControllerDay -> stop()");
+            if (subscription != null && !subscription.isUnsubscribed())
+                subscription.unsubscribe();
+        }catch (Exception ignored){}
         subscription=null;
     }
 }

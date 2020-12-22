@@ -3,11 +3,12 @@ package org.md2k.mcerebrum.commons.ui.data_quality;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.md2k.datakitapi.DataKitAPI;
 import org.md2k.datakitapi.source.datasource.DataSource;
@@ -18,7 +19,6 @@ import org.md2k.mcerebrum.core.access.appinfo.AppCP;
 
 import java.util.ArrayList;
 
-import es.dmoral.toasty.Toasty;
 import mehdi.sakout.fancybuttons.FancyButton;
 
 public class ActivityDataQuality extends AppCompatActivity {
@@ -55,7 +55,7 @@ public class ActivityDataQuality extends AppCompatActivity {
                 try {
                     ArrayList<DataSourceClient> ds = dataKitAPI.find(new DataSourceBuilder(plot));
                     if(ds.size()==0){
-                        Toasty.error(ActivityDataQuality.this, "Device not registered with datakit", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivityDataQuality.this, "Device not registered with datakit", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     b.putParcelable(org.md2k.datakitapi.source.datasource.DataSource.class.getSimpleName(), ds.get(0).getDataSource());

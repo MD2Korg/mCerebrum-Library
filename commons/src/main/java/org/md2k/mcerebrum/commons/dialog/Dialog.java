@@ -29,10 +29,9 @@ package org.md2k.mcerebrum.commons.dialog;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.InputType;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -40,19 +39,9 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
-import org.md2k.datakitapi.DataKitAPI;
-import org.md2k.datakitapi.datatype.DataTypeLong;
-import org.md2k.datakitapi.exception.DataKitException;
-import org.md2k.datakitapi.time.DateTime;
-import org.md2k.mcerebrum.commons.R;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
-
-import es.dmoral.toasty.Toasty;
-
-import static android.R.id.input;
 
 public class Dialog {
     public static MaterialDialog.Builder singleChoice(Activity activity, String title, String[] items, int selected, final DialogCallback dialogCallback) {
@@ -85,7 +74,7 @@ public class Dialog {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                         if(dialog.getSelectedIndex()==-1){
-                            Toasty.error(activity, "File is not selected", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, "File is not selected", Toast.LENGTH_SHORT).show();
                             return;
                         }
                         dialogCallback.onSelected(items[dialog.getSelectedIndex()]);

@@ -1,11 +1,10 @@
 package org.md2k.mcerebrum.core.access.studyinfo;
 
 // @formatter:off
-import java.util.Date;
 
 import android.database.Cursor;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import org.md2k.mcerebrum.core.access.base.AbstractCursor;
 

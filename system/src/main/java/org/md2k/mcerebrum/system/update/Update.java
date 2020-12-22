@@ -33,7 +33,6 @@ import org.md2k.mcerebrum.system.appinfo.AppInstall;
 import org.md2k.mcerebrum.system.cerebralcortexwebapi.ServerManager;
 
 import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 

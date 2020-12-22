@@ -2,9 +2,8 @@ package org.md2k.mcerebrum.core.access;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
-import org.md2k.mcerebrum.core.R;
 import org.md2k.mcerebrum.core.access.appinfo.AppAccess;
 
 public class ActivityEmpty extends AppCompatActivity {

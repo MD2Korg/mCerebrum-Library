@@ -2,12 +2,26 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/cerebralcortexwebapi/cerebralcortexwebapi.iml" filepath="$PROJECT_DIR$/cerebralcortexwebapi/cerebralcortexwebapi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" />
-      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../mCerebrum-DataKitAPI/datakitapi/datakitapi.iml" filepath="$PROJECT_DIR$/../mCerebrum-DataKitAPI/datakitapi/datakitapi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mCerebrum-Library.iml" filepath="$PROJECT_DIR$/mCerebrum-Library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/system/system.iml" filepath="$PROJECT_DIR$/system/system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mCerebrum-EMA/EMA/EMA.iml" filepath="$PROJECT_DIR$/../mCerebrum-EMA/EMA/EMA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mCerebrum-LowEffortIntervention/LowEffortIntervention.iml" filepath="$PROJECT_DIR$/../mCerebrum-LowEffortIntervention/LowEffortIntervention.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mCerebrum-mars/android/android.iml" filepath="$PROJECT_DIR$/../mCerebrum-mars/android/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mCerebrum-mars/android/app/android-app.iml" filepath="$PROJECT_DIR$/../mCerebrum-mars/android/app/android-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mCerebrum-LowEffortIntervention/app/app.iml" filepath="$PROJECT_DIR$/../mCerebrum-LowEffortIntervention/app/app.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/audioplayers-0.13.7/android/audioplayers.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/audioplayers-0.13.7/android/audioplayers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" group="mCerebrum-Library/commons" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" group="mCerebrum-Library/core" />
+      <module fileurl="file://$PROJECT_DIR$/../mCerebrum-DataKitAPI/datakitapi/datakitapi.iml" filepath="$PROJECT_DIR$/../mCerebrum-DataKitAPI/datakitapi/datakitapi.iml" group="mCerebrum-Library/datakitapi" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_ringtone_player-2.0.0/android/flutter_ringtone_player.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_ringtone_player-2.0.0/android/flutter_ringtone_player.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-3.1.3/android/fluttertoast.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-3.1.3/android/fluttertoast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mCerebrum-DataKitAPI/mCerebrum-DataKitAPI.iml" filepath="$PROJECT_DIR$/../mCerebrum-DataKitAPI/mCerebrum-DataKitAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mCerebrum-EMA/mCerebrum-EMA.iml" filepath="$PROJECT_DIR$/../mCerebrum-EMA/mCerebrum-EMA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mCerebrum-Library.iml" filepath="$PROJECT_DIR$/mCerebrum-Library.iml" group="mCerebrum-Library" />
+      <module fileurl="file://$PROJECT_DIR$/../mCerebrum-LowEffortIntervention/system/mCerebrum-LowEffortIntervention-system.iml" filepath="$PROJECT_DIR$/../mCerebrum-LowEffortIntervention/system/mCerebrum-LowEffortIntervention-system.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.5.1/android/path_provider.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.5.1/android/path_provider.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/screen-0.0.5/android/screen.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/screen-0.0.5/android/screen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/system/system.iml" filepath="$PROJECT_DIR$/system/system.iml" group="mCerebrum-Library/system" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/vibration-1.2.4/android/vibration.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/vibration-1.2.4/android/vibration.iml" />
+      <module fileurl="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/wakelock-0.1.3+3/android/wakelock.iml" filepath="$USER_HOME$/flutter/.pub-cache/hosted/pub.dartlang.org/wakelock-0.1.3+3/android/wakelock.iml" />
     </modules>
   </component>
 </project>

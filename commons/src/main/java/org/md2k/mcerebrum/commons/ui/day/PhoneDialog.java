@@ -1,18 +1,15 @@
 package org.md2k.mcerebrum.commons.ui.day;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
-import java.util.concurrent.TimeUnit;
-
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Action0;
-import rx.functions.Func1;
 
 /*
  * Copyright (c) 2016, The University of Memphis, MD2K Center

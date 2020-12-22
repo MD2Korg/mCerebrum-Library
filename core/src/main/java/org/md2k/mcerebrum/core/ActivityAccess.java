@@ -1,6 +1,6 @@
 package org.md2k.mcerebrum.core;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class ActivityAccess extends AppCompatActivity {

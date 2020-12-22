@@ -8,10 +8,9 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
-import org.md2k.mcerebrum.core.access.BuildConfig;
 import org.md2k.mcerebrum.core.access.base.BaseContentProvider;
 import org.md2k.mcerebrum.core.access.appinfo.AppInfoColumns;
 import org.md2k.mcerebrum.core.access.configinfo.ConfigInfoColumns;

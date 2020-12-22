@@ -108,24 +108,30 @@ public class ModelDay {
         if (dataSourceClients.size() > 0) {
             ArrayList<DataType> dataTypes = dataKitAPI.query(dataSourceClients.get(0), 1);
             if (dataTypes.size() != 0) {
-                DataTypeLong d = (DataTypeLong) dataTypes.get(0);
-                return d.getSample();
+                try {
+                    DataTypeLong d = (DataTypeLong) dataTypes.get(0);
+                    return d.getSample();
+                }catch (Exception e){
+
+                }
             }
         }
         return -1;
     }
 
-    private long readWS(Context context, DataSourceBuilder dataSourceBuilder) throws DataKitException {
+    private long readWS(Context context, DataSourceBuilder dataSourceBuilder) {
+        try {
             DataKitAPI dataKitAPI = DataKitAPI.getInstance(context);
             ArrayList<DataSourceClient> dataSourceClients = dataKitAPI.find(dataSourceBuilder);
             if (dataSourceClients.size() > 0) {
                 ArrayList<DataType> dataTypes = dataKitAPI.query(dataSourceClients.get(0), 1);
                 if (dataTypes.size() != 0) {
-                        DataTypeLong d = (DataTypeLong) dataTypes.get(0);
-                        return d.getSample();
-
+                    DataTypeLong d = (DataTypeLong) dataTypes.get(0);
+                    return d.getSample();
                 }
             }
+        }catch (Exception e){
+        }
         return -1;
     }
 
@@ -182,11 +188,15 @@ public class ModelDay {
     void set() throws DataKitException {
 //        wakeupTime = DateTime.getTimeInMillis("05:33:00");
         wakeupTime = readWS(context, new DataSourceBuilder().setType(DataSourceType.WAKEUP));
+        if(wakeupTime==-1)
+            wakeupTime = DateTime.getTimeInMillis("07:00:00");
         Log.d("abc", "Day: ModelDay: set() -> wakeup=" + DateTime.convertTimestampToTimeStr(wakeupTime));
 //        sleepTime = DateTime.getTimeInMillis("05:33:30");
-
         sleepTime = readWS(context, new DataSourceBuilder().setType(DataSourceType.SLEEP));
-        Log.d("abc", "Day: ModelDay: set() -> sleeptime=" + DateTime.convertTimestampToTimeStr(sleepTime));
+        if(sleepTime==-1){
+            sleepTime = DateTime.getTimeInMillis("11:00:00");
+        }
+        Log.d("abc", "Day: ModelDay: set() -> sleep time=" + DateTime.convertTimestampToTimeStr(sleepTime));
         dayStart = readDay(context, new DataSourceBuilder().setType("DAY").setId("START"));
         Log.d("abc", "Day: ModelDay: set() -> dayStart=" + DateTime.convertTimeStampToDateTime(dayStart));
         dayEnd = readDay(context, new DataSourceBuilder().setType("DAY").setId("END"));

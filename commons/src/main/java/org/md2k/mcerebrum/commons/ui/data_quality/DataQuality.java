@@ -3,8 +3,9 @@ package org.md2k.mcerebrum.commons.ui.data_quality;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import org.md2k.datakitapi.DataKitAPI;
 import org.md2k.datakitapi.datatype.DataType;
@@ -87,10 +88,6 @@ class DataQuality {
     private Runnable runnableSubscribe = new Runnable() {
         @Override
         public void run() {
-//            Log.d(TAG,"runnableSubscribe..."+dataSource.getType()+" "+dataSource.getId());
-//            if(dataSource.getId().equals("ECG"))
-//                Log.d(TAG,"here");
-
             try {
                 final ArrayList<DataSourceClient> dataSourceClientArrayList = DataKitAPI.getInstance(context).find(new DataSourceBuilder(createDataSource(dataSource)));
                 Log.d("abc","datasource length="+dataSourceClientArrayList.size()+" datasource="+dataSource.getType()+" "+dataSource.getId()+" "+dataSource.getPlatform().getType()+" "+dataSource.getPlatform().getId());
@@ -116,8 +113,8 @@ class DataQuality {
         }
     };
     private void prepare(DataType dataType){
+        handlerNoData.removeCallbacks(runnableNoData);
         if(dataType instanceof DataTypeInt) {
-            handlerNoData.removeCallbacks(runnableNoData);
             DataTypeInt sample = ((DataTypeInt) dataType);
             receiveCallBack.onReceive(sample);
 
@@ -135,8 +132,8 @@ class DataQuality {
                                 });
                                 t.start();
 */
-            handlerNoData.postDelayed(runnableNoData, DELAY_TIME);
         }
+        handlerNoData.postDelayed(runnableNoData, DELAY_TIME);
     }
     void stop() {
         try {

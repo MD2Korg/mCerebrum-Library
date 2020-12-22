@@ -30,8 +30,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.support.v4.content.PermissionChecker;
 import android.util.Log;
+
 
 import com.tbruyelle.rxpermissions.RxPermissions;
 
@@ -42,9 +42,9 @@ import static android.Manifest.permission.BATTERY_STATS;
 import static android.Manifest.permission.PACKAGE_USAGE_STATS;
 import static android.Manifest.permission.READ_LOGS;
 import static android.Manifest.permission.SYSTEM_ALERT_WINDOW;
-import static android.support.v4.content.PermissionChecker.PERMISSION_GRANTED;
 
 public class Permission{
+
     public static void requestPermission(Activity activity, final PermissionCallback permissionCallback) {
         try {
             PackageInfo info = activity.getPackageManager().getPackageInfo(activity.getPackageName(), PackageManager.GET_PERMISSIONS);
@@ -60,7 +60,9 @@ public class Permission{
         }
     }
 
-/*    public static boolean hasPermission(Activity activity) {
+
+/*
+    public static boolean hasPermission(Activity activity) {
         try {
             PackageInfo info = activity.getPackageManager().getPackageInfo(activity.getPackageName(), PackageManager.GET_PERMISSIONS);
             RxPermissions rxPermissions = new RxPermissions(activity);
@@ -72,17 +74,20 @@ public class Permission{
             return true;
         }
     }
-    */
+*/
+
     public static boolean hasPermission(Context context){
         try {
             PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_PERMISSIONS);
+            Log.d("abc", "permission length = "+info.requestedPermissions.length);
             for (int i = 0; i < info.requestedPermissions.length; i++) {
+                Log.d("abc","permission = "+info.requestedPermissions[i]);
                 if(info.requestedPermissions[i].equals(READ_LOGS)) continue;
                 if(info.requestedPermissions[i].equals(BATTERY_STATS)) continue;
                 if(info.requestedPermissions[i].equals(ACCESS_CHECKIN_PROPERTIES)) continue;
                 if(info.requestedPermissions[i].equals(PACKAGE_USAGE_STATS)) continue;
                 if(info.requestedPermissions[i].equals(SYSTEM_ALERT_WINDOW)) continue;
-                if(context.checkCallingOrSelfPermission(info.requestedPermissions[i])!= PermissionChecker.PERMISSION_GRANTED) {
+                if(context.checkCallingOrSelfPermission(info.requestedPermissions[i])!= PackageManager.PERMISSION_GRANTED) {
                     Log.d("abc", "no permission = " + info.requestedPermissions[i]);
                     return false;
                 }

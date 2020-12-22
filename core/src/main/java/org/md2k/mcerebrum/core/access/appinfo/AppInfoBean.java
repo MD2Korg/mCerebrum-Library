@@ -1,12 +1,9 @@
 package org.md2k.mcerebrum.core.access.appinfo;
 
 // @formatter:off
-import org.md2k.mcerebrum.core.access.base.BaseModel;
 
-import java.util.Date;
-
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 /**
  * Application Information
